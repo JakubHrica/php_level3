@@ -3,16 +3,20 @@ session_start();
 require_once 'classes/HelperMySQLi.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $name = trim($_POST['name']);
-    $_SESSION['name'] = $name;
+  // Získanie mena z formulára  
+  $name = trim($_POST['name']);
+  // Uložíme meno do session
+  $_SESSION['name'] = $name;
 
+  if ($name !== '') { // Kontrola, či meno nie je prázdne
     $existingStudent = HelperMySQLi::getStudentByName($name);
     if (!$existingStudent) {
         HelperMySQLi::insertStudent($name);
     }
-
+    // Presmerovanie na profilovú stránku
     header('Location: profile.php');
     exit;
+  }
 }
 ?>
 
