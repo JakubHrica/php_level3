@@ -11,12 +11,14 @@ if (!isset($_SESSION['name'])) {
 
 $studentName = $_SESSION['name'];
 
+// Odhlásenie
 if (isset($_POST['logout'])) {
     session_destroy();
     header('Location: index.php');
     exit;
 }
 
+// Pridanie príchodu
 if (isset($_POST['add_arrival']) && $studentName !== 'all') {
     $arrival = new Arrival($studentName);
     $arrival->logArrival();
@@ -24,14 +26,18 @@ if (isset($_POST['add_arrival']) && $studentName !== 'all') {
     exit;
 }
 
+// Získanie zoznamu príchodov ak je user "all"
 $arrivals = $studentName === 'all'
     ? HelperMySQLi::getAllArrivals()
     : HelperMySQLi::getArrivalsByStudent($studentName);
 
+// Zoradenie príchodov podľa času
 usort($arrivals, fn($a, $b) => strtotime($a['time']) <=> strtotime($b['time']));
+
+// Zoskupenie príchodov podľa rovnakého dátumu
 $grouped = [];
 foreach ($arrivals as $arrival) {
-    $date = date('Y-m-d', strtotime($arrival['time']));
+    $date = date('Y-m-d', strtotime($arrival['time'])); // Získanie dátumu (bez času)
     $grouped[$date][] = $arrival;
 }
 ?>
