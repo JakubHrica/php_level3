@@ -6,23 +6,23 @@
         background: linear-gradient(to top right, #2575fc, #1a5fd0, #00d2d6);
         min-height: 100vh;
     }
-    
-    
-        /* ---------- Štýly pre INDEX.PHP ---------- */
+
+
+    /* ---------- Štýly pre INDEX.PHP ---------- */
     body.index-page {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100vh;
     }
-      
+
     .index-page .login-container {
         display: flex;
         justify-content: center;
         align-items: center;
         width: 100%;
     }
-      
+
     .index-page .login-card {
         background-color: white;
         padding: 20px;
@@ -31,14 +31,14 @@
         width: 600px;
         text-align: center;
     }
-      
+
     .index-page .login-card h1 {
         margin-bottom: 25px;
         font-size: 1.8rem;
         color: #000;
         font-weight: bold;
     }
-      
+
     .index-page .login-card label {
         display: block;
         font-size: 1rem;
@@ -46,7 +46,7 @@
         text-align: left;
         margin-left: 2px;
     }
-      
+
     .index-page .login-card input {
         width: 100%;
         padding: 12px;
@@ -56,7 +56,7 @@
         font-size: 16px;
         box-sizing: border-box;
     }
-      
+
     .index-page .login-card button {
         width: 100%;
         padding: 12px;
@@ -68,18 +68,18 @@
         cursor: pointer;
         transition: background-color 0.3s;
     }
-      
+
     .index-page .login-card button:hover {
         background-color: #1a5fd0;
     }
-    
-    
-        /* ---------- Štýly pre PROFILE.PHP ---------- */
+
+
+    /* ---------- Štýly pre PROFILE.PHP ---------- */
     body.profile-page {
         justify-content: center;
         align-items: center;
     }
-      
+
     .profile-page header {
         position: sticky;
         top: 0;
@@ -94,38 +94,38 @@
         backdrop-filter: blur(8px);
         transition: background-color 0.3s ease;
     }
-      
+
     .profile-page header.scrolled {
         background-color: #2575fc;
     }
-      
+
     .profile-page .profile-wrapper {
         display: flex;
         align-items: center;
     }
-      
+
     .profile-page header .right {
         display: flex;
         align-items: center;
     }
-      
+
     .profile-page header .right img.profile-icon {
         width: 30px;
         height: 30px;
         margin-right: 10px;
         filter: invert(1);
     }
-      
+
     .profile-page header .right span {
         white-space: nowrap;
     }
-      
+
     .profile-page .container {
         display: flex;
         justify-content: center;
         padding: 20px;
     }
-      
+
     .profile-page .main-content {
         display: flex;
         flex-direction: column;
@@ -139,16 +139,27 @@
         padding: 20px;
         background: #fff;
         border-radius: 10px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    
+
     .profile-page .date-heading {
         font-weight: bold;
         font-size: 1.2em;
         margin-bottom: 10px;
     }
-    
-      
+
+    .profile-page .no-arrivals {
+        background-color: white;
+        border-radius: 10px;
+        padding: 30px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-size: 1.2rem;
+        color: #444;
+        width: 600px;
+        margin: 40px auto;
+    }
+
     .profile-page .arrival {
         display: flex;
         justify-content: space-between;
@@ -156,28 +167,28 @@
         border-bottom: 1px solid #ddd;
         align-items: center;
     }
-      
+
     .profile-page .arrival:last-child {
         border-bottom: none;
     }
-      
+
     .profile-page .arrival .time {
         width: 33%;
         text-align: left;
     }
-      
+
     .profile-page .arrival .name {
         width: 34%;
         text-align: center;
     }
-      
+
     .profile-page .arrival .note {
         width: 33%;
         text-align: right;
         font-weight: bold;
         color: red;
     }
-      
+
     .profile-page .sidebar {
         width: 200px;
         position: fixed;
@@ -186,14 +197,14 @@
         margin-top: 20px;
         margin-right: 20px;
     }
-      
+
     .profile-page .button-block {
         background-color: white;
         padding: 20px;
         border-radius: 8px;
         box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
     }
-      
+
     .profile-page button {
         width: 100%;
         padding: 12px;
@@ -205,12 +216,11 @@
         cursor: pointer;
         transition: background-color 0.3s;
     }
-      
+
     .profile-page button:hover {
         background-color: #1a5fd0;
     }
-      
-    .profile-page button + button {
+
+    .profile-page button+button {
         margin-top: 15px;
     }
-  
